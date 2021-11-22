@@ -15,5 +15,7 @@ AFRAME.registerComponent("create-buttons",{
         var buttonDiv = document.getElementById("button-div")
         buttonDiv.appendChild(button1)
         buttonDiv.appendChild(button2)
+        buttonDiv.appendChild(button3) //missing line added
+
     }
 })

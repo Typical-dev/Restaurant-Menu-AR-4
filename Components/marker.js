@@ -1,5 +1,3 @@
-
-
 AFRAME.registerComponent("create-marker", {
   init: async function () {
     var mainScene = document.querySelector("#main-scene");
@@ -78,8 +76,8 @@ AFRAME.registerComponent("create-marker", {
         //ingriedients.setAttribute("material", {color:"f0c30f"})
         mainPlane.appendChild(ingriedients);
         var pricePlane = document.createElement("a-image");
-        console.log(dish.id);
         pricePlane.setAttribute("id", `price-plane-${dish.id}`);
+        console.log(pricePlane.id);
         pricePlane.setAttribute(
           "src",
           "https://raw.githubusercontent.com/whitehatjr/menu-card-app/main/black-circle.png"
@@ -100,6 +98,9 @@ AFRAME.registerComponent("create-marker", {
           align: "center",
           value: `Only\n$${dish.price}`,
         });
+        
+        pricePlane.appendChild(price); //missing lines added
+        marker.appendChild(pricePlane); //missing lines added
         var ratingPlane = document.createElement("a-entity");
         ratingPlane.setAttribute("id", `rating-plane-${dish.id}`);
         ratingPlane.setAttribute("position", { x: 2, y: 0, z: 0.5 });
